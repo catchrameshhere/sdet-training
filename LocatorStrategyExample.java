@@ -199,6 +199,40 @@ public class LocatorStrategyExample extends Base{
 		$$("input[id='email'].inputtext._55r1#email._6luy")
 		$$("input[id='email'].inputtext#email._55r1._6luy")
 	
+		//substring
+		//starts with or prefix ==> ^
+		$$("input[id^='email']")
+		$$("input[id^='emai']")
+		$$("input[id^='ema']")
+		$$("input[id^='em']")
+		$$("input[id^='e']")
+		
+		//ends with or postfix ==> $
+		$$("input[id$='email']")
+		$$("input[id$='mail']")
+		$$("input[id$='ail']")
+		$$("input[id$='il']")
+		$$("input[id$='l']")
+		
+		//contains or substring==> *
+		$$("input[id*='email']")
+		$$("input[id*='emai']")
+		$$("input[id*='ema']")
+		$$("input[id*='em']")
+		$$("input[id*='e']")
+		
+		$$("input[id*='mail']")
+		$$("input[id*='mail']")
+		$$("input[id*='ail']")
+		$$("input[id*='il']")
+		$$("input[id*='l']")
+		
+		$$("input[id*='email']")
+		$$("input[id*='m']")
+		$$("input[id*='ma']")
+		$$("input[id*='ai']")
+		$$("input[id*='mai']")
+		
 	}
 
 	public static void main(String[] args) {
