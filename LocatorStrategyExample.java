@@ -91,30 +91,114 @@ public class LocatorStrategyExample extends Base{
 		$x("//button[starts-with(text(),'Log I')]")
 		$x("//button[starts-with(text(),'L')]")
 		
+		//Advanced
+		//and
+		$x("//input[contains(@class,'_55r1') and @id='pass']")
+		
+		//or
+		$x("//button[text()='Log In' or text()='लॉग इन करें']")
+		
+		//index
+		$x("//select[3]")//sibling
+		$x("//input")[2]
+				
+		//chained
+		$x("//form/div/div/input")
+		$x("//form//input[@id='email']")
+		$x("//form//input[@id='pass']")
 		
 		
+		//Axes
+		//child
+		$x("//span[@data-name='birthday_wrapper']/child::span")
+		
+		//parent
+		$x("//select[@id='month']/parent::span")
 		
 		
+		//following-sibling
+		$x("//select[@id='day']/following-sibling::select[@id='year']")
+		$x("//select[@id='day']/following-sibling::select[2]")
 		
 		
+		//following-sibling
+		$x("//select[@id='day']/following::select[@id='year']")
+		$x("//select[@id='day']/following::select[2]")
+		$x("//input[@name='firstname']/following::select[@id='year']")
 		
+		//preceding
+		$x("//select[@id='month']/preceding::input[@name='firstname']")
+		$x("//select[@id='year']/preceding::select[@id='day']")
+		$x("//select[@id='year']/preceding::select[2]")
 		
+		//preceding-sibling
+		$x("//select[@id='year']/preceding-sibling::select[@id='day']")
+		$x("//select[@id='year']/preceding-sibling::select[2]")
 		
+		//ancestor
+		$x("//select[@id='year']/ancestor::div[@id='reg_box']")
+		$x("//select[@id='year']/ancestor::form")
+		$x("//select[@id='year']/ancestor::div[@id='reg_box']//select[2]")
 		
-		
-		
-		
-		
-		
+		//descendant
+		$x("//body/descendant::select[@id='month']")
+		$x("//body//form/descendant::select[@id='month']")
+		$x("//form/descendant::select[@id='month']")
+		$x("//form/div/descendant::select[@id='month']")
+		$x("//form//div/descendant::select[@id='month']")
 		
 		
 		//css
 //		driver.findElement(By.cssSelector("#email")).sendKeys("from css");
 		
+		//css ==> id attr
+		$$("#email")
 		
+		//css ==> class attr
+		$$(".inputtext")
+		$$("._55r1")
+		$$("._6luy")
+		$$(".inputtext._55r1")
+		$$("._55r1._6luy")
+		$$(".inputtext._6luy")
 		
+		//css ==> id and class attr
+		$$("#email.inputtext")
+		$$("#email._55r1")
+		$$("#email._6luy")
+		$$("#email.inputtext._55r1")
+		$$("#email._55r1._6luy")
+		$$("#email.inputtext._6luy")
+		$$("#email.inputtext._55r1._6luy")
+		$$(".inputtext#email._55r1._6luy")
+		$$(".inputtext._55r1#email._6luy")
+		$$(".inputtext._55r1._6luy#email")
+		$$(".inputtext#email")
+		$$("._55r1#email")
 		
+		//css ==> html tagname
+		$$("button")
 		
+		//css ==> html attribute
+		$$("[id='email']")
+		
+		//css ==> html + html attribute
+		$$("input[id='email']")
+		
+		//css ==> (css id + css class) + html (tagname + attribute)
+		$$("input#email")
+		$$("input#email.inputtext._55r1._6luy")
+		$$("input[id='email']#email")
+		$$("input[id='email']#email.inputtext")
+		$$("input[id='email']#email.inputtext._55r1")
+		$$("input[id='email']#email.inputtext._55r1._6luy")
+		$$("input[id='email']#email.inputtext._55r1")
+		$$("input[id='email']#email._55r1._6luy")
+		$$("input[id='email']#email.inputtext._6luy")
+		$$("input[id='email'].inputtext._55r1._6luy#email")
+		$$("input[id='email'].inputtext._55r1#email._6luy")
+		$$("input[id='email'].inputtext#email._55r1._6luy")
+	
 	}
 
 	public static void main(String[] args) {
